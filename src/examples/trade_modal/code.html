@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#0f131f",
+                    "surface": "#0f131f",
+                    "surface-dim": "#0f131f",
+                    "surface-bright": "#353946",
+                    "surface-container-lowest": "#0a0e1a",
+                    "surface-container-low": "#171b28",
+                    "surface-container": "#1b1f2c",
+                    "surface-container-high": "#262a37",
+                    "surface-container-highest": "#313442",
+                    "surface-variant": "#313442",
+                    "on-surface": "#dfe2f3",
+                    "on-surface-variant": "#c5c5d3",
+                    "on-background": "#dfe2f3",
+                    "outline": "#8f909c",
+                    "outline-variant": "#454651",
+                    "primary": "#bbc6ff",
+                    "on-primary": "#0e2878",
+                    "primary-container": "#95a9ff",
+                    "on-primary-container": "#253b89",
+                    "primary-fixed": "#dde1ff",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "on-primary-fixed": "#001453",
+                    "on-primary-fixed-variant": "#2b418f",
+                    "secondary": "#d7fff3",
+                    "on-secondary": "#00382f",
+                    "secondary-container": "#00f5d3",
+                    "on-secondary-container": "#006c5c",
+                    "secondary-fixed": "#25fedc",
+                    "secondary-fixed-dim": "#00dfc0",
+                    "on-secondary-fixed": "#00201a",
+                    "on-secondary-fixed-variant": "#005144",
+                    "tertiary": "#ffafed",
+                    "on-tertiary": "#56124f",
+                    "tertiary-container": "#e691d4",
+                    "on-tertiary-container": "#6a2561",
+                    "tertiary-fixed": "#ffd7f2",
+                    "tertiary-fixed-dim": "#ffacec",
+                    "on-tertiary-fixed": "#390035",
+                    "on-tertiary-fixed-variant": "#712b68",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#dfe2f3",
+                    "inverse-on-surface": "#2c303d",
+                    "inverse-primary": "#4559a9",
+                    "surface-tint": "#b7c4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "sm": "0.25rem",
+                    "md": "0.75rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-padding": "1.5rem",
+                    "section-gap": "2.5rem",
+                    "gutter": "1.5rem",
+                    "container-max": "1600px",
+                    "header-height": "72px"
+            },
+            "fontFamily": {
+                    "sans": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "title-sm": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-sm": ["16px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-caps": ["10px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0f131f;
+            color: #dfe2f3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(14, 19, 32, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ghost-border { border: 1px solid rgba(113, 117, 132, 0.2); }
+        .mesh-gradient-bg {
+            background-image:
+                radial-gradient(at 0% 0%, rgba(187, 198, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 245, 211, 0.10) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(255, 175, 237, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glow-primary { box-shadow: 0 0 20px rgba(187, 198, 255, 0.2); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased mesh-gradient-bg min-h-screen overflow-hidden">
+<!-- Background Content: Market Detail Page (Blurred) -->
+<div class="fixed inset-0 z-0 overflow-hidden blur-md saturate-50 opacity-40">
+<!-- Unified Header (matches other pages) -->
+<div class="w-full">
+<header class="w-full bg-slate-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8 h-[72px] flex items-center justify-between gap-4 sm:gap-8">
+<span class="text-lg sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent whitespace-nowrap">Ten IQ Markets</span>
+<div class="hidden md:flex flex-1 max-w-xl relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-white/5 ghost-border rounded-full py-2.5 pl-12 pr-4 text-sm" placeholder="Search markets..." type="text"/>
+</div>
+<div class="flex items-center gap-2 sm:gap-4">
+<span class="material-symbols-outlined text-on-surface-variant p-2">notifications</span>
+<span class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container px-3 sm:px-5 py-2 rounded-full font-bold text-on-primary shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg sm:text-xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-xs sm:text-sm">Connect</span>
+</span>
+</div>
+</div>
+<nav class="w-full bg-slate-950/40 backdrop-blur-md border-t border-white/5 overflow-hidden">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8 h-11 flex items-center gap-6 sm:gap-8 text-[11px] sm:text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+<span class="text-slate-500">Trending</span>
+<span class="text-slate-500">Current Events</span>
+<span class="text-slate-500">Politics</span>
+<span class="text-primary border-b-2 border-primary h-11 flex items-center">Sports</span>
+<span class="text-slate-500">Crypto</span>
+<span class="text-slate-500">Tech</span>
+<span class="text-slate-500">Economics</span>
+<span class="text-slate-500">Entertainment</span>
+<span class="text-slate-500">Science</span>
+</div>
+</nav>
+</header>
+</div>
+<main class="max-w-[1600px] mx-auto px-8 pt-[140px] grid grid-cols-12 gap-8">
+<div class="col-span-8 space-y-6">
+<div class="flex flex-wrap items-center gap-3">
+<span class="bg-secondary/20 text-secondary border border-secondary/30 px-3 py-1 rounded-full text-label-caps font-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Live
+</span>
+<span class="bg-surface-container text-on-surface-variant border border-outline/20 px-3 py-1 rounded-full text-label-caps font-label-caps">#1 Sports</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-white leading-tight">Who will win the FIFA World Cup 2026?</h1>
+<div class="glass-panel rounded-3xl h-[320px]"></div>
+<div class="space-y-3">
+<div class="glass-panel p-5 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20"></div>
+<div class="flex-grow flex justify-between items-center">
+<span class="text-title-sm font-title-sm text-white">Brazil</span>
+<span class="text-headline-md font-headline-md text-primary">25%</span>
+</div>
+</div>
+<div class="glass-panel p-5 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 border border-tertiary/20"></div>
+<div class="flex-grow flex justify-between items-center">
+<span class="text-title-sm font-title-sm text-white">France</span>
+<span class="text-headline-md font-headline-md text-tertiary">22%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-4">
+<div class="glass-panel rounded-3xl h-[600px]"></div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-950/60 backdrop-blur-sm">
+<!-- Trade Confirmation Modal -->
+<div class="glass-panel w-full max-w-md rounded-3xl overflow-hidden shadow-[0_20px_60px_-10px_rgba(0,0,0,0.8)]">
+<!-- Modal Header -->
+<div class="p-card-padding border-b border-white/10 flex justify-between items-start gap-4">
+<div>
+<span class="text-label-caps font-label-caps text-primary tracking-[0.2em] mb-2 block">TRADE CONFIRMATION</span>
+<h2 class="text-title-sm font-title-sm text-on-surface leading-tight">Who will win the FIFA World Cup 2026?</h2>
+</div>
+<button class="p-2 -m-2 rounded-full hover:bg-white/5 text-on-surface-variant hover:text-on-surface transition-all active:scale-95 shrink-0">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-card-padding space-y-5">
+<!-- Summary Table -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Outcome</span>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full bg-primary shadow-[0_0_8px_rgba(187,198,255,0.5)]"></div>
+<span class="text-body-md font-bold text-on-surface">Brazil (Yes)</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Action</span>
+<span class="text-label-caps font-label-caps bg-secondary/20 text-secondary px-2.5 py-1 rounded-full border border-secondary/30 uppercase tracking-widest">BUY</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Shares</span>
+<span class="text-body-md font-bold text-on-surface">500.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Average Price</span>
+<span class="text-body-md font-bold text-on-surface">$0.64</span>
+</div>
+<div class="h-px bg-white/10 my-1"></div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Subtotal</span>
+<span class="text-body-md text-on-surface">$320.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Fees</span>
+<span class="text-body-md text-on-surface">$0.50</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="text-title-sm font-title-sm text-on-surface">Total Cost</span>
+<span class="text-headline-md font-headline-md text-primary">$320.50</span>
+</div>
+</div>
+<!-- Price Movement & Impact -->
+<div class="bg-white/5 ghost-border rounded-2xl p-4 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Price Movement</span>
+<div class="flex items-center gap-2 font-bold">
+<span class="text-on-surface-variant">64¢</span>
+<span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+<span class="text-primary">66¢</span>
+</div>
+</div>
+<!-- Warning -->
+<div class="flex items-center gap-2 bg-error-container/20 border border-error-container/40 p-2.5 rounded-lg">
+<span class="material-symbols-outlined text-error text-sm">warning</span>
+<span class="text-body-md text-error font-semibold">2.3% price impact</span>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="space-y-4">
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container font-headline-md text-headline-md rounded-2xl shadow-lg shadow-secondary-container/30 hover:brightness-110 active:scale-[0.98] transition-all flex justify-center items-center gap-3">
+                        Confirm Buy
+                        <span class="material-symbols-outlined font-bold">keyboard_double_arrow_right</span>
+</button>
+<!-- Disclaimer -->
+<p class="text-center text-[11px] text-on-surface-variant leading-relaxed opacity-70">
+                        By confirming, you authorize your wallet to sign this transaction. Predicted outcomes are not guaranteed. Market risk applies.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-slate-950/80 backdrop-blur-lg rounded-t-3xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] text-[9px] uppercase tracking-widest">
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">explore</span>
+<span>Markets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary scale-105 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+<span>Trade</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">pie_chart</span>
+<span>Portfolio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

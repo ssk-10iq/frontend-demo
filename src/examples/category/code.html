@@ -1,0 +1,367 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#0f131f",
+                      "surface": "#0f131f",
+                      "surface-dim": "#0f131f",
+                      "surface-bright": "#353946",
+                      "surface-container-lowest": "#0a0e1a",
+                      "surface-container-low": "#171b28",
+                      "surface-container": "#1b1f2c",
+                      "surface-container-high": "#262a37",
+                      "surface-container-highest": "#313442",
+                      "surface-variant": "#313442",
+                      "on-surface": "#dfe2f3",
+                      "on-surface-variant": "#c5c5d3",
+                      "on-background": "#dfe2f3",
+                      "outline": "#8f909c",
+                      "outline-variant": "#454651",
+                      "primary": "#bbc6ff",
+                      "on-primary": "#0e2878",
+                      "primary-container": "#95a9ff",
+                      "on-primary-container": "#253b89",
+                      "primary-fixed": "#dde1ff",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "on-primary-fixed": "#001453",
+                      "on-primary-fixed-variant": "#2b418f",
+                      "secondary": "#d7fff3",
+                      "on-secondary": "#00382f",
+                      "secondary-container": "#00f5d3",
+                      "on-secondary-container": "#006c5c",
+                      "secondary-fixed": "#25fedc",
+                      "secondary-fixed-dim": "#00dfc0",
+                      "on-secondary-fixed": "#00201a",
+                      "on-secondary-fixed-variant": "#005144",
+                      "tertiary": "#ffafed",
+                      "on-tertiary": "#56124f",
+                      "tertiary-container": "#e691d4",
+                      "on-tertiary-container": "#6a2561",
+                      "tertiary-fixed": "#ffd7f2",
+                      "tertiary-fixed-dim": "#ffacec",
+                      "on-tertiary-fixed": "#390035",
+                      "on-tertiary-fixed-variant": "#712b68",
+                      "error": "#ffb4ab",
+                      "on-error": "#690005",
+                      "error-container": "#93000a",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#dfe2f3",
+                      "inverse-on-surface": "#2c303d",
+                      "inverse-primary": "#4559a9",
+                      "surface-tint": "#b7c4ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.5rem",
+                      "sm": "0.25rem",
+                      "md": "0.75rem",
+                      "lg": "1rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "1.5rem",
+                      "container-max": "1600px",
+                      "section-gap": "2.5rem",
+                      "header-height": "72px",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "sans": ["Manrope"],
+                      "title-sm": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "headline-md": ["Manrope"],
+                      "label-caps": ["Manrope"],
+                      "body-md": ["Manrope"]
+              },
+              "fontSize": {
+                      "title-sm": ["16px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["10px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "800"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0f131f;
+            color: #dfe2f3;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(14, 19, 32, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ghost-border { border: 1px solid rgba(113, 117, 132, 0.2); }
+        .mesh-gradient-bg {
+            background-image:
+                radial-gradient(at 0% 0%, rgba(187, 198, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 245, 211, 0.10) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(255, 175, 237, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glow-primary { box-shadow: 0 0 20px rgba(187, 198, 255, 0.2); }
+    </style>
+</head>
+<body class="antialiased mesh-gradient-bg min-h-screen pb-28 md:pb-0">
+<!-- Header Container -->
+<div class="fixed top-0 w-full z-50">
+<!-- Main Top Bar -->
+<header class="w-full bg-slate-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8 h-[72px] flex items-center justify-between gap-4 sm:gap-8">
+<a class="text-lg sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent whitespace-nowrap" href="#">Ten IQ Markets</a>
+<div class="hidden md:flex flex-1 max-w-xl relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-white/5 ghost-border rounded-full py-2.5 pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all" placeholder="Search markets..." type="text">
+</div>
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="md:hidden p-2 hover:bg-white/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container px-3 sm:px-5 py-2 rounded-full font-bold text-on-primary active:scale-95 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg sm:text-xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-xs sm:text-sm">Connect</span>
+</button>
+</div>
+</div>
+<!-- Secondary Navigation Sub-header -->
+<nav class="w-full bg-slate-950/40 backdrop-blur-md border-t border-white/5 overflow-x-auto no-scrollbar">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8 h-11 flex items-center gap-6 sm:gap-8 text-[11px] sm:text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Trending</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Current Events</a>
+<a class="text-primary border-b-2 border-primary h-11 flex items-center" href="#">Politics</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Sports</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Crypto</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Tech</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Economics</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Entertainment</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Science</a>
+</div>
+</nav>
+</header>
+</div>
+<div class="max-w-[1600px] mx-auto pt-[124px] px-4 sm:px-8 flex gap-8">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:block w-64 flex-shrink-0">
+<div class="glass-panel rounded-2xl overflow-hidden shadow-xl sticky top-[124px]">
+<div class="p-6 border-b border-white/10">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-primary-container">gavel</span>
+<h2 class="text-white font-bold text-lg">Politics</h2>
+</div>
+<p class="text-slate-500 text-xs uppercase tracking-widest font-semibold">Global Forecasts</p>
+</div>
+<nav class="flex flex-col py-4">
+<a class="flex items-center gap-3 bg-primary-container/20 text-primary-container border-r-4 border-primary-container px-6 py-3 text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">how_to_vote</span>
+                        U.S. Elections
+                    </a>
+<a class="flex items-center gap-3 text-slate-500 px-6 py-3 hover:text-slate-200 hover:bg-white/5 transition-all text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+                        Global Affairs
+                    </a>
+<a class="flex items-center gap-3 text-slate-500 px-6 py-3 hover:text-slate-200 hover:bg-white/5 transition-all text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">gavel</span>
+                        Legislative
+                    </a>
+<a class="flex items-center gap-3 text-slate-500 px-6 py-3 hover:text-slate-200 hover:bg-white/5 transition-all text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">query_stats</span>
+                        Polling
+                    </a>
+<a class="flex items-center gap-3 text-slate-500 px-6 py-3 hover:text-slate-200 hover:bg-white/5 transition-all text-sm font-semibold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                        Midterms
+                    </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 pb-20">
+<!-- Hero Banner -->
+<div class="relative h-64 rounded-2xl overflow-hidden mb-10 border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="wide shot of the white house at dusk with dramatic blue and purple sky lighting and modern architectural detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3p2hwkgbJ71nAUcmkpNWWTngth7y1I9wHbsAVm1JzuOFGVnr8e2rxYSmHa5-Y-6fG2yutjm_mdbPBapUqvGdY-eFH5bK-mKa6IGh3iwUjzM6TkDoGG-bMoYBlpRU-9kSxUCd5RucxNteVAQPv3wPdx3YvO5l4AP-lMrFOTPq7pLBvlaSTHtyKWvZKlaltrEDHexhiC4S4AmBnFIzgET7QFCGIqln9gyW4dC8cdXdbgC1fAwAnNUUetVuQ81coI94cRQeSDTzmoBw" style="">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-center px-12">
+<span class="bg-primary-container/20 text-primary-container text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full border border-primary-container/30 w-fit mb-4" style="">Live Market Forecasts</span>
+<h1 class="font-display-lg text-display-lg text-white mb-2" style="">2026 Global Elections</h1>
+<p class="text-on-surface-variant max-w-xl font-body-md" style="">Analyze the shift in geopolitical power. From the US midterms to European legislative cycles, trade on the outcomes of history in the making.</p>
+</div>
+</div>
+<!-- Market Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+<!-- Market Card 1 -->
+<div class="glass-panel rounded-2xl p-6 hover:border-primary-container/50 transition-all duration-300 group cursor-default">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 rounded-xl bg-white/5">
+<span class="material-symbols-outlined text-primary-container" data-icon="public" style="">public</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary-container text-xl font-black" style="">18%</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter" style="">Probability</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6 group-hover:text-primary transition-colors leading-tight" style="">Will the UK rejoin the EU Single Market by 2030?</h3>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-8 flex overflow-hidden">
+<div class="h-full bg-primary-container glow-primary" style="width: 18%"></div>
+<div class="h-full bg-tertiary-container/30" style="width: 82%"></div>
+</div>
+<div class="flex gap-3 mb-6">
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">Yes $0.18</button>
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">No $0.82</button>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm" data-icon="bar_chart" style="">bar_chart</span>
+<span class="text-xs font-bold text-slate-400" style="">$5.2M Vol</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional portrait of male trader" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw5OoIXMSMIUdMW5jk0eiMzhyUEhFliDm4bREopwkk1x7y1o19KPCFoiwIahqYh6ClAmerTrIxlwnTR8hLwCgp-ffzls97tlx0YNs8BnLe_E8KyZWm8JKmcy0t8fz-yybUA7rGczqcLPnpQz9kvtNoL5IqjEy3koJaCTKeMBXPQEJ0pD3g9QzlVvGycwOgXf4mDY0Wf3_hF07yF4BJxSHTMcfodK8NCBtMj0yPXvspIz6EzR8rp_XFy7BjMXdRmtY7eRmxNEU9lGQ" style="">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional portrait of female analyst" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxfadry1n4yOVzKCG33slepQFXytV1MhVKrZBHHaudsz12Pr_yof-rkdT4vqMA6Z8DztdL6NoLWXvdZWmqCa7CUwUU2BrDp9EJFLr29Ei4DphmATXZ4qJipAMmCl6DPm7NEoieWEDF8h-Ign_Sg1qCMaTjDwSp0YOXg7XKndVGL5W4FjGDZc_DZuSO6LxYBy11uReekMRpINN74vh_DrFooiUbgJEggBJFeX6wvElpVl7yl34aATCdJEvYu0b4kZCy7WehjZStZes" style="">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-variant flex items-center justify-center text-[8px] font-bold text-slate-300" style="">+2k</div>
+</div>
+</div>
+</div>
+<!-- Market Card 2 -->
+<div class="glass-panel rounded-2xl p-6 hover:border-primary-container/50 transition-all duration-300 group cursor-default">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 rounded-xl bg-white/5">
+<span class="material-symbols-outlined text-primary-container" data-icon="how_to_vote" style="">how_to_vote</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary-container text-xl font-black" style="">42%</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter" style="">Probability</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6 group-hover:text-primary transition-colors leading-tight" style="">Will the 2026 US Presidential Election be decided by &lt; 50 Electoral Votes?</h3>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-8 flex overflow-hidden">
+<div class="h-full bg-primary-container glow-primary" style="width: 42%"></div>
+<div class="h-full bg-tertiary-container/30" style="width: 58%"></div>
+</div>
+<div class="flex gap-3 mb-6">
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">Yes $0.42</button>
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">No $0.58</button>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm" data-icon="bar_chart" style="">bar_chart</span>
+<span class="text-xs font-bold text-slate-400" style="">$12.8M Vol</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional portrait of woman executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB-EdyWX-QEsS_aCyo8zamxQY-HfywPEA_d_4Pa-yYxgfWW7GpfBSmbl5upk5Cu-1ZdRgOJlFq2GFqmJH3TEbXUcrefLrPqhlrw52y2D6oSSowBD88PhT_WvBH2wkvCITFubVaffTd4soVRepYtiYIrkXU1zA3GZM1rl_QXasHfkj0UgBXfer8LhjnOXbVOpBMal1winzonM6xg__eEkQzUvWXgE1K40ATqmPt7Z8M2AvgI6PlqVAyWTAAF_Jpbl4YXxGlnuvQcxw" style="">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="professional portrait of man in suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKN65P13kEXKRxjNe-fkwjpFZyHmBA66Ap4hlXfmmH4Xi3RTYzmV2KrEkpox5t2CS-lOHyPiNkT7VwNwA13VAgG9GdhcfFq75A3bNK4T5POgOCvxa9IMUQLAw18SfYJcIBZhCl_SAuLUBL_kihCzjmX96Qs-mePqJuVnPP6UGvPgqbozTZnXL40g8X2VNBUZlhYsEFbrlix7lr60KFtSrJfkfxsUz4WK8t2083Vj5jQnBP1zDu2Fh3iI2kPw4GV2xKL9_cZfBAWX8" style="">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-variant flex items-center justify-center text-[8px] font-bold text-slate-300" style="">+4k</div>
+</div>
+</div>
+</div>
+<!-- Market Card 3 -->
+<div class="glass-panel rounded-2xl p-6 hover:border-primary-container/50 transition-all duration-300 group cursor-default">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 rounded-xl bg-white/5">
+<span class="material-symbols-outlined text-primary-container" data-icon="gavel" style="">gavel</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary-container text-xl font-black" style="">64%</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter" style="">Probability</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6 group-hover:text-primary transition-colors leading-tight" style="">Will Congress pass a comprehensive AI Regulation Act before Jan 2027?</h3>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-8 flex overflow-hidden">
+<div class="h-full bg-primary-container glow-primary" style="width: 64%"></div>
+<div class="h-full bg-tertiary-container/30" style="width: 36%"></div>
+</div>
+<div class="flex gap-3 mb-6">
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">Yes $0.64</button>
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">No $0.36</button>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm" data-icon="bar_chart" style="">bar_chart</span>
+<span class="text-xs font-bold text-slate-400" style="">$3.1M Vol</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="headshot of young business woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHEGXWC2hIJy2xmWFH8nQUpfsqRTK79cOjKqIQZHDLTE8be3jE6rOlnJ3i6LY1VAnHDnE9WU_pH3LUuxzvAwREgg13vttCJPYc49ndGFfyuBeDlQRoL43exYb_W2GO6H4rdM17N4I3Td56bL2OZg6Ql3NmHlC3Majhk_aO4VYsrA5gGZSUipX935WK9sRbR8HkaDpnRvaJbY-ca5IqFgN2_SDDgzyL7iGH21IU8pAi6933r0kPuIYQ7mDIzhnVEsYQR0Ul_rFvT9Y" style="">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-variant flex items-center justify-center text-[8px] font-bold text-slate-300" style="">+800</div>
+</div>
+</div>
+</div>
+<!-- Market Card 4 -->
+<div class="glass-panel rounded-2xl p-6 hover:border-primary-container/50 transition-all duration-300 group cursor-default">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 rounded-xl bg-white/5">
+<span class="material-symbols-outlined text-primary-container" data-icon="query_stats" style="">query_stats</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary-container text-xl font-black" style="">29%</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter" style="">Probability</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6 group-hover:text-primary transition-colors leading-tight" style="">Will any G7 nation adopt a Central Bank Digital Currency (CBDC) by 2027?</h3>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full mb-8 flex overflow-hidden">
+<div class="h-full bg-primary-container glow-primary" style="width: 29%"></div>
+<div class="h-full bg-tertiary-container/30" style="width: 71%"></div>
+</div>
+<div class="flex gap-3 mb-6">
+<button class="flex-1 bg-primary-container text-on-primary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">Yes $0.29</button>
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container py-3 rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all">No $0.71</button>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm" data-icon="bar_chart" style="">bar_chart</span>
+<span class="text-xs font-bold text-slate-400" style="">$8.7M Vol</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="man in business attire portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUA2TQjaTgejU9efKVnNFi18VJa3gMU-F6xwu4GYxg1JrJBoQn6e52EtXnZV8V6lEX52OG4qLHAhIu54VFHtW2jEB6H4MJ6tyQYNggIEo80VL4Zjv4mvRSnutTaInXZqcJ9rCVUFvIOqx2Px74kS9-PasrCmbojVjbFzit-P_U0ivaos6P1lBRRWdreQpc6WA_6p2IHt6aaIuPPXqrHXsYNeExSmTc4rPDNfSBrkPGxxLcKqs4OYqz_90WzrjeTn4DW3QxGHED7ck" style="">
+<img class="w-6 h-6 rounded-full border-2 border-surface-container-lowest" data-alt="woman smiling portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHFhDdli7BYjgmaEDepa_deMLbvHKgvz06irVBMnYe4tbkzgZGlUmZQaYBaxD29y5y2fa3bHjVJMWO7m-3gm9AIg2Xj1WKzzTHuxl9rUWPrGu-nRSGi5pIo_OnCj0EKTAqzsL8AVRYBsdWG-ibW1wt2_pC9ktk4BJNTWDGl_BgmHRzxLu_VKF_IJ5CJbKSLuPmMRhdWE9qY0052zPGnD5M_PVjHObBj1QK0mvWDrPUZn1qLoOlvN-q_9tAD-bacTp_Pw0Hpef0uhU" style="">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest bg-surface-variant flex items-center justify-center text-[8px] font-bold text-slate-300" style="">+1.5k</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-slate-950/80 backdrop-blur-lg rounded-t-3xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] text-[9px] uppercase tracking-widest">
+<a class="flex flex-col items-center justify-center text-primary scale-105 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span>Markets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">swap_horiz</span>
+<span>Trade</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">pie_chart</span>
+<span>Portfolio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 transition-all" href="#">
+<span class="material-symbols-outlined text-lg mb-0.5">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

@@ -25,8 +25,8 @@ jobs:
         run: npm ci
 
       - name: Build
-        # env:
-        #   VITE_WALLETCONNECT_PROJECT_ID: ${{ secrets.VITE_WALLETCONNECT_PROJECT_ID }}
+        env:
+          VITE_WALLETCONNECT_PROJECT_ID: ${{ secrets.VITE_WALLETCONNECT_PROJECT_ID }}
         #   VITE_CHAIN_ID: ${{ vars.VITE_CHAIN_ID }}
         #   VITE_RPC_URL: ${{ vars.VITE_RPC_URL }}
         run: npm run build

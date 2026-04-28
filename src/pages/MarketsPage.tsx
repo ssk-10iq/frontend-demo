@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { MarketCard } from '@/components/market/MarketCard';
 import { MarketCardMulti } from '@/components/market/MarketCardMulti';
@@ -58,6 +58,11 @@ export default function MarketsPage() {
 
   const subcategories = CATEGORY_SUBCATEGORIES[activeCategory] ?? [];
   const [activeSubcat, setActiveSubcat] = useState<string | null>(null);
+
+  useEffect(() => {
+    setActiveSubcat(null);
+  }, [activeCategory]);
+
 
   let markets = getMarketsByCategory(urlCategory);
   if (urlSearch) {

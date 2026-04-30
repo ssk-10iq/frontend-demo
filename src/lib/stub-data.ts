@@ -660,6 +660,67 @@ export const STUB_MARKETS: StubMarket[] = [
     resolutionSource: 'French government official announcement',
     traderCount: 1800,
   },
+
+  // ── Science markets ───────────────────────────────────────────────────────
+  {
+    id: 'h5n1-pheic-2026',
+    title: 'Will the WHO declare H5N1 a PHEIC before 31 December 2026?',
+    description:
+      'Resolves YES if the World Health Organization formally declares H5N1 influenza a Public Health Emergency of International Concern (PHEIC) before December 31, 2026. A PHEIC requires a convened Emergency Committee recommendation accepted by the WHO Director-General. Resolves NO if no such declaration is made by market close.',
+    category: 'Science',
+    subcategory: 'Health',
+    status: 'open',
+    type: 'binary',
+    closeDate: '2026-12-30',
+    resolutionDate: '2026-12-31',
+    volume: 1_840_000,
+    traders: 14_200,
+    icon: 'health_and_safety',
+    iconColor: 'secondary',
+    outcomes: binaryOutcomes(28, 0.28),
+    resolutionSource: 'WHO official declaration (who.int/emergencies)',
+    traderCount: 14200,
+  },
+
+  // ── Current Events markets ────────────────────────────────────────────────
+  {
+    id: 'hormuz-reopen-jun30',
+    title: 'Will the Strait of Hormuz open before 30 June?',
+    description:
+      'Resolves YES if the Strait of Hormuz is confirmed fully open to commercial shipping before June 30, 2026, as reported by official statements from the US Navy, UKMTO, or a comparable maritime authority. Partial re-openings or temporary ceasefires do not constitute resolution.',
+    category: 'Current Events',
+    subcategory: 'Geopolitics',
+    status: 'open',
+    type: 'binary',
+    closeDate: '2026-06-29',
+    resolutionDate: '2026-06-30',
+    volume: 3_140_000,
+    traders: 24_600,
+    icon: 'water',
+    iconColor: 'primary',
+    outcomes: binaryOutcomes(40, 0.40),
+    resolutionSource: 'US Navy 5th Fleet / UKMTO official statements',
+    traderCount: 24600,
+  },
+  {
+    id: 'brent-150-jul31',
+    title: 'Will Brent Crude Oil be above US$150 on 31 July?',
+    description:
+      'Resolves YES if the ICE Brent Crude Oil front-month futures settlement price is strictly above US$150.00 per barrel on July 31, 2026. If July 31 is not a trading day, the nearest prior trading day settlement price is used.',
+    category: 'Current Events',
+    subcategory: 'Energy',
+    status: 'open',
+    type: 'binary',
+    closeDate: '2026-07-30',
+    resolutionDate: '2026-07-31',
+    volume: 2_870_000,
+    traders: 19_300,
+    icon: 'oil_barrel',
+    iconColor: 'tertiary',
+    outcomes: binaryOutcomes(35, 0.35),
+    resolutionSource: 'ICE Brent Crude Oil futures settlement price (ICE.com)',
+    traderCount: 19300,
+  },
 ];
 
 // ── Trending sidebar ─────────────────────────────────────────────────────────
@@ -722,6 +783,18 @@ export const CATEGORY_SUBCATEGORIES: Record<string, { label: string; icon: strin
     { label: 'Movies', icon: 'movie'        },
     { label: 'Music',  icon: 'music_note'   },
     { label: 'TV',     icon: 'tv'           },
+  ],
+  'Current Events': [
+    { label: 'Geopolitics', icon: 'public'           },
+    { label: 'Energy',      icon: 'oil_barrel'       },
+    { label: 'Conflict',    icon: 'crisis_alert'     },
+    { label: 'Economy',     icon: 'trending_up'      },
+  ],
+  Science: [
+    { label: 'Health',   icon: 'health_and_safety' },
+    { label: 'Space',    icon: 'rocket_launch'     },
+    { label: 'Climate',  icon: 'thermostat'        },
+    { label: 'Biology',  icon: 'biotech'           },
   ],
 };
 

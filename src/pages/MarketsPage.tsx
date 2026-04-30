@@ -41,6 +41,16 @@ const CATEGORY_META: Record<string, { icon: string; description: string }> = {
     description:
       'Interest rates, GDP, inflation targets — trade on the macroeconomic forces driving global markets.',
   },
+  'Current Events': {
+    icon: 'newspaper',
+    description:
+      'Trade on the outcomes of the world\'s most pressing events — geopolitics, conflict, energy markets, and more.',
+  },
+  Science: {
+    icon: 'science',
+    description:
+      'From pandemic thresholds to space discoveries — trade on the scientific questions shaping our world.',
+  },
 };
 
 export default function MarketsPage() {
